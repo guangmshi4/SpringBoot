@@ -21,6 +21,8 @@ public class User {
     @Column(nullable = false, length = 20, name = "last_name")
     private String lastName;
 
+    private boolean enable;
+
     public Integer getId() {
         return id;
     }
@@ -70,5 +72,13 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }
