@@ -14,7 +14,7 @@ import java.util.Optional;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
-public class UserRepositoryTests {
+public class UserRoleRepositoryTests {
     @Autowired
     private UserRepository repo;
 

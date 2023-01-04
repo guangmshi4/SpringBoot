@@ -20,7 +20,7 @@ public class LoginHandler extends SavedRequestAwareAuthenticationSuccessHandler 
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         if(userDetails.getUsername().equals("trainee")){
-            redirectURL = "/permission";
+            redirectURL = "/logout";
         }else if(userDetails.getUsername().equals("admin")){
             redirectURL = "/api/v1/students";
         }

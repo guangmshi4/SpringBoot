@@ -2,6 +2,13 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SpringSecurity login</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
   <title>Manage Users</title>
   <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
@@ -41,6 +48,7 @@
               [[${user.LastName}]]
             </td>
             <td>
+              <a class="h4 mr-3"th:href="@{'/users/view/' + ${user.id}}">view</a>
               <a class="h4 mr-3" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
               <a class="h4 mr-3"th:href="@{'/users/delete/' + ${user.id}}">Delete</a>
             </td>
@@ -48,6 +56,7 @@
         </th:block>
       </tbody>
     </table>
+    <a class="btn btn-lg btn-primary btn-block"th:href="@{'/logout'}">Logout</a>
   </div>
 </div>
 </body>
