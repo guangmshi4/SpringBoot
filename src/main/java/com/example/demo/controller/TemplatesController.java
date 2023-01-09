@@ -4,6 +4,7 @@ import com.example.demo.user.User;
 import com.example.demo.user.UserNotFound;
 import com.example.demo.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -58,6 +59,7 @@ public class TemplatesController {
     }
 
     @GetMapping("/users/edit/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra){
         try {
             User user = userService.get(id);
